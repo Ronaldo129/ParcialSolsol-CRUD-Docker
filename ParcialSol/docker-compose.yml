@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  db-mysql:
+    image: mysql:8.0
+    container_name: db-mysql # nombre de tu contenedor
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: examen_ronaldo
+    ports:
+      - "3307:3306" # Cambiar al puerto 3307 en local
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
